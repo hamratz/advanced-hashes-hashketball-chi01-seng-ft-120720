@@ -180,17 +180,19 @@ def player_numbers(jerseyz)
   return whatz_my_num
 end
 
-
-
-
-
-
-
-
-
-
-
-
+def player_stats(playerz_stat)
+  game_hash.each do |teamz, teamz_info|
+    teamz_info.each do |key, value|
+      if key == :players
+        value.each do |playerz|
+          if playerz_stat == playerz[:player_name]
+            return playerz
+          end
+        end
+      end
+    end
+  end
+end
 
 def big_shoe_rebounds
   big_shoez = 0 
