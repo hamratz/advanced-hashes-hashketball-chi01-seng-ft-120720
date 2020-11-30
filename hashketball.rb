@@ -191,29 +191,6 @@ def big_shoe_rebounds
 
 
 
-=begin
-def player_stats(playerz_name)
-  whatz_ur_stat = []
-  game_hash.each do |teamz_name, teamz_info|
-      teamz_info.each do |key, value|
-        if key == :players
-          value.each do |playerz, playerz_data|
-            if playerz == playerz_name
-              whatz_ur_stat<<(playerz_data[:players])
-            end
-          end
-        end
-      end
-    end
-    return whatz_ur_stat[0]
-  end
-=end
-#iterate through each team (home and away keys) to access the inner hash value (chaining and .each)- keep iterating #through the inner hash values and arrays until you reach the data you need- the player name and points  
-#if the player name == the inputted player argument 
-# return the number of points scored
-
-
-
 
 
  
