@@ -161,7 +161,7 @@ end
 def team_names
   game_hash.map do |teamz_name, teamz_info|
     teamz_info[:team_name]
-end
+  end
 end
 
 def player_numbers(jerseyz) 
