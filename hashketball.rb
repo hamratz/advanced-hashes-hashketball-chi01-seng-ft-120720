@@ -181,7 +181,9 @@ def player_numbers(jerseyz)
 end
 
 def big_shoe_rebounds
-
+  big_shoez = 0 
+  reboundz = 0 
+  game_hash.each do 
 
 
 
