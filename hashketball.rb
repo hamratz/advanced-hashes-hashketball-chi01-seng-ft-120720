@@ -1,3 +1,6 @@
+
+require "pry"
+
 # Write your code below game_hash
 def game_hash
   {
@@ -126,4 +129,101 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(player_pointz)
+  game_hash.each do |teamz_name, teamz_info|
+    teamz_info[:players].each do |bb_player|
+      if bb_player[:player_name] == player_pointz
+        return bb_player[:points]
+      end
+    end
+  end
+end
+
+def shoe_size(player_shoesz)
+  game_hash.each do |teamz_name, teamz_info|
+    teamz_info[:players].each do |bb_player|
+      if bb_player[:player_name] == player_shoesz
+        return bb_player[:shoe]
+      end
+    end
+  end
+end
+
+def team_colors(teamz)
+    if teamz == "Charlotte Hornets"
+      game_hash[:away][:colors]
+    elsif teamz == "Brooklyn Nets"
+      game_hash[:home][:colors]
+    else
+  end
+end
+
+def team_names
+  game_hash.map do |teamz_name, teamz_info|
+    teamz_info[:team_name]
+end
+end
+
+def player_numbers(jerseyz) 
+  whatz_my_num = []
+  game_hash.each do |teamz_name, teamz_info|
+  if teamz_info[:team_name] == jerseyz
+    teamz_info.each do |key, value|
+        if key == :players
+          value.each do |playerz|
+            whatz_my_num<<(playerz[:number])
+          end
+        end
+      end
+    end
+  end
+  return whatz_my_num
+end
+
+
+
+
+
+
+
+
+
+
+
+
+=begin
+def player_stats(playerz_name)
+  whatz_ur_stat = []
+  game_hash.each do |teamz_name, teamz_info|
+      teamz_info.each do |key, value|
+        if key == :players
+          value.each do |playerz, playerz_data|
+            if playerz == playerz_name
+              whatz_ur_stat<<(playerz_data[:players])
+            end
+          end
+        end
+      end
+    end
+    return whatz_ur_stat[0]
+  end
+=end
+#iterate through each team (home and away keys) to access the inner hash value (chaining and .each)- keep iterating #through the inner hash values and arrays until you reach the data you need- the player name and points  
+#if the player name == the inputted player argument 
+# return the number of points scored
+
+
+
+
+
+ 
+ 
+ 
+
+
+       
+       
+       
+       
+       
+       
